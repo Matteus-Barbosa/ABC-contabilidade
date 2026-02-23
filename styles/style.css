@@ -7,112 +7,30 @@
 }
 
 :root {
-    --destaque: #1E3A5E;
-    --font-color-white: white;
-    --footer-bg-color: #2A2A2A;
-    --bg-gradient: #F5FEFF, #BEC3C3 92%;
-    --badgets-gradient: #EDE7D6 7%, #E5DDC6 50%, #CBC5B4 100%;
+    /*design-tokens*/
+    --clr-light-blue: #00A7E1;
+    --clr-white: #ffffff;
+    --clr-navy-blue: #00171F;
+    --fw-medium: 500;
+    --fw-semi-bold: 600;
+    --fw-bold: 700;
+    --fw-black: 900;
+    --fs-sm: 0.875rem; /*14px*/
+    --fs-md: 1rem; /*16px*/
+    --fs-lg: 1.5rem; /*24px*/
+    --fs-xl: 2.5rem; /*40px*/
+    --ff-main: Figtree, Arial, Helvetica, sans-serif;
+
+    /*vars*/
+        /*subtext-h1 = local style {fw-bold}*/
+    --text-heading-clr: var(--clr-light-blue);
+    --text-heading-wgt: var(--fw-black);
+    --text-paragraph-wgt:  var(--fw-medium);
+    --text-btn-clr: var(--clr-white);
+    --text-btn-wgt: var(--fw-bold);
+    --text-heading-size: ;
 }
 
-html,
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.5em;
-    display: flex;
-    flex-direction: column;
-}
-
-header {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px solid black;
-    padding: 15px 30px;
-    color: var(--font-color-white);
-    background-color: var(--destaque);
-    height: 6vh;
-}
-
-header>h1 {
-    font-weight: bolder;
-}
-
-nav>ul {
-    display: flex;
-    gap: 30px;
-    list-style: none;
-}
-
-nav ul li a {
-    color: var(--font-color-white);
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.2em;
-}
-
-a#user {
-    color: var(--font-color-white);
-    font-weight: bolder;
-    font-size: 1.5em;
-}
-
-main {
-    height: 100vh;
-}
-
-section#hero {
-    height: calc(100vh - 6vh);
-    display: grid;
-    grid-template-columns: 120px 1fr 1fr 120px;
-    grid-template-rows: 1fr 50px;
-}
-
-section#hero>article.hero--cta {
-    grid-column: 2;
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: center;
-
-
-}
-
-section#hero>div.img {
-    grid-column: 3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-section#hero>aside#badgets {  /*ANALISAR*/
-    grid-column: 1 / -1;
-    grid-row: 2;
-    background-image: linear-gradient(to bottom, var(--badgets-gradient));
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 50px;
-}
-
-aside#badgets>.badgets--icons {  /*ANALISAR*/
-    padding: 0 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 1200px;
-    list-style: none;
-}
-
-.badgets--icons li>i {
-    color: var(--destaque);
-}
-
-footer {
-    text-align: center;
-    color: var(--font-color-white);
-    background-color: var(--footer-bg-color);
+    font-family: var(--ff-main);
 }
