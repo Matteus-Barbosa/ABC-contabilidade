@@ -6,31 +6,141 @@
     box-sizing: border-box;
 }
 
+/* Primitives */
 :root {
-    /*design-tokens*/
-    --clr-light-blue: #00A7E1;
-    --clr-white: #ffffff;
-    --clr-navy-blue: #00171F;
-    --fw-medium: 500;
-    --fw-semi-bold: 600;
-    --fw-bold: 700;
-    --fw-black: 900;
-    --fs-sm: 0.875rem; /*14px*/
-    --fs-md: 1rem; /*16px*/
-    --fs-lg: 1.5rem; /*24px*/
-    --fs-xl: 2.5rem; /*40px*/
+    /* color */
+    --color-brand-light-blue: #00a7e1;
+    --color-brand-navy-blue: #00171f;
+    --color-brand-white: #ffffff;
+    --color-landing-elements-black: #000000;
+    --color-landing-elements-gold: #ffd700;
+    --color-landing-elements-medium-gray: #d9d9d9;
+    --color-landing-elements-warm-white: #fdfaf6;
+    --color-opacity-30-light-blue: #00a7e14d;
+    --color-opacity-50-black: #00000080;
+    --color-opacity-50-light-blue: #00a7e180;
+    --color-opacity-70-light-blue: #00a7e1b2;
+    --color-opacity-70-navy-blue: #00171fb2;
+    /* number */
+    --radius-sm: 0.25rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 1rem;
+    --radius-xl: 2rem;
+    --radius-2xl: 8rem;
+    --radius-3xl: 22.5rem;
+    --spacing-dot5: 0.25rem;
+    --spacing-1: 0.5rem;
+    --spacing-2: 1rem;
+    --spacing-3: 1.5rem;
+    --spacing-4: 2rem;
+    --spacing-5: 2.5rem;
+    --spacing-6: 3rem;
+    --spacing-7: 3.625rem;
+    --spacing-8: 4rem;
+    --spacing-9: 4.5rem;
+    --spacing-10: 5rem;
+    --spacing-11: 5.5rem;
+    --spacing-12: 6rem;
+    --spacing-13: 6.5rem;
+}
+/* Tokens */
+:root {
+    /* color */
+    --border-border-light: var(--color-opacity-30-light-blue);
+    --border-border-medium: var(--color-opacity-50-light-blue);
+    --border-border-primary: var(--color-brand-light-blue);
+    --border-border-secondary: var(--color-opacity-70-light-blue);
+    --landing-elements-profile-icons: var(--color-landing-elements-medium-gray);
+    --landing-elements-stars: var(--color-landing-elements-gold);
+    --surface-surface-brand: var(--color-brand-light-blue);
+    --surface-surface-primary: var(--color-brand-white);
+    --surface-surface-secondary: var(--color-landing-elements-warm-white);
+    --text-text-brand: var(--color-brand-light-blue);
+    --text-text-brand-light: var(--color-opacity-70-navy-blue);
+    --text-text-brand-secondary: var(--color-brand-navy-blue);
+    --text-text-light: var(--color-opacity-50-black);
+    --text-text-primary: var(--color-landing-elements-black);
+    --text-text-secondary: var(--color-brand-white);
+    /* number */
+    --radius-radius-minimal: var(--radius-sm);
+    --radius-radius-rounded: var(--radius-md);
+    --radius-radius-full: var(--radius-3xl);
+    --spacing-spacing-none: 0rem;
+    --spacing-spacing-xs: var(--spacing-dot5);
+    --spacing-spacing-sm: var(--spacing-1);
+    --spacing-spacing-md: var(--spacing-3);
+    --spacing-spacing-lg: var(--spacing-4);
+    --spacing-spacing-xl: var(--spacing-6);
+    --spacing-spacing-2xl: var(--spacing-13);
+    /* font */
     --ff-main: Figtree, Arial, Helvetica, sans-serif;
-
-    /*vars*/
-        /*subtext-h1 = local style {fw-bold}*/
-    --text-heading-clr: var(--clr-light-blue);
-    --text-heading-wgt: var(--fw-black);
-    --text-paragraph-wgt:  var(--fw-medium);
-    --text-btn-clr: var(--clr-white);
-    --text-btn-wgt: var(--fw-bold);
-    --text-heading-size: ;
 }
 
-body {
+html, body {
     font-family: var(--ff-main);
+    margin: 0px;
+    padding: 0px;
 }
+
+header {
+    display: grid;
+    grid-template-columns: 16px 1fr 16px;
+    grid-template-rows: 1fr 70px;
+    width: 100vw;
+    height: 100vh;
+}
+
+.Hero {
+    grid-column: 2 / 3;
+    grid-row: 1 / 1;
+}
+.hero-area {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-spacing-lg);
+}
+
+.hero--text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-spacing-sm);
+}
+.hero--heading-subtext {
+    color: var(--text-text-brand-secondary);
+    font-weight: 600;
+}
+.hero--heading-text {
+    color: var(--text-text-brand);
+    font: 900 max(42px, 4vw)/1.05 var(--ff-main);
+}
+.hero--heading-paragraph {
+    font: normal 1rem/auto var(--ff-main);
+}
+
+.hero--cta {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: var(--spacing-spacing-md);
+}
+.hero--arrow {
+    max-width: 45vw;
+}
+.hero--cta-btns {
+    
+}
+.hero--btn-consultation {
+    background: none;
+    border: none;
+    padding: 20px 0px;
+    font-size: smaller;
+    font-weight: bold;
+}
+.hero--btn-tax_calc {
+    text-decoration: none;
+}
+
+.Nav {
+    grid-column: 1 / -1;
+    grid-row: 2 / 2 ;
+}
+
