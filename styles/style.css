@@ -31,40 +31,59 @@
 /*op = optimization - reduce copied lines*/
 
 html, body {
-    margin: 0;
-    padding: 0;
     font-family: var(--ff-main); 
 }
 
+/* standalone style rules */
 .spacing {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1.5rem;
 }
 
-.hero {
-    min-height: 100vh;
-    justify-content: space-around;
-}
-
-.hero__box--flex-column {
+.flex-col-nowrap {
     display: flex;
-    flex-direction: column;
+    flex-flow: column nowrap;
 }
 
-.hero__box--gap {
+.flex-col-wrap {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.flex-row-nowrap {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.gap-16 {
     gap: 16px;
 }
 
+
+/* stylesheet */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 8px;
+}
+
+.hero__main {
+    flex: 1;
+    justify-content: center;
+    align-content: center;
+}
+
+
 .hero__content {
-    display: flex; /*op*/
-    flex-direction: column; /*op*/
-    gap: 8px; 
+    padding-top: 16px; 
     max-width: 600px;
 }
 
 .hero__subtitle {
-    color: var(--color-text-content); /*op*/
+    color: var(--color-text-content);
     font-weight: 600;
 }
 
@@ -75,7 +94,7 @@ html, body {
 }
 
 .hero__description {
-    color: var(--color-text-content); /*op*/
+    color: var(--color-text-content);
     font-weight: 500;
 }
 
@@ -84,9 +103,7 @@ html, body {
     max-width: 500px;
 }
 
-.hero__btns {
-    display: flex;
-    flex-flow: column wrap;
+.hero__btn {
     background: none;
     border: none;
     cursor: pointer;
@@ -105,14 +122,15 @@ html, body {
 .hero__btn--link {
     color: var(--color-brand-light-blue);
     text-align: center;
-    padding: 16px;
+    max-width: fit-content;
+    margin: 16px auto;
+    padding: 0px 16px;
 }
 
 .menu {
     width: 100%;
-    display: flex;
-    flex-flow: row nowrap;
     justify-content: space-around;
+    align-content: center;
     padding-bottom: 8px;
     border-bottom: 2px solid var(--color-brand-light-blue);
 }
@@ -126,9 +144,26 @@ html, body {
 
 
 @media (min-width: 1024px) {
-    .hero {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-around;
+
+    .hero__main {
+        display: grid;
+        grid-template: repeat(2, auto) / repeat(2, 500px);
     }
+
+    .hero__content {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        align-self: end;
+    }
+
+    .hero__img {
+        grid-column: 2/3;
+        grid-row: 1 / 3 ;
+    }
+
+    .hero__btns {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+    }
+
 }
