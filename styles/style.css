@@ -27,6 +27,13 @@
     --spacing-md: 16px;
     --spacing-lg: 24px;
     --spacing-xlg: 32px;
+    
+    --weight-regular: 300;
+    --weight-medium: 400;
+    --weight-semibold: 500;
+    --weight-bold: 600;
+    --weight-bolder: 700;
+    --weight-black: 900;
 
     /*tokens*/
     --color-btn-primary: var(--color-brand-light-blue);
@@ -34,6 +41,7 @@
     --color-text-content: var(--color-brand-navy-blue);
     --color-text-title: var(--color-brand-light-blue);
     
+    --radius-xsm: var(--spacing-xsm);
     --radius-sm: var(--spacing-sm);
     --radius-md: var(--spacing-md);
     --radius-lg: var(--spacing-lg);
@@ -43,20 +51,11 @@
     --gap-md: var(--spacing-md);
     --gap-lg: var(--spacing-lg);
 
-    --weight-regular: 300;
-    --weight-medium: 400;
-    --weight-semibold: 500;
-    --weight-bold: 600;
-    --weight-bolder: 700;
-    --weight-black: 900;
-    
 }
 
 /*op = optimization - reduce copied lines*/
 
-html, body {
-    font-family: var(--ff-main); 
-}
+html, body {font-family: var(--ff-main);}
 
 /* standalone style rules */
 .spacing {
@@ -79,14 +78,15 @@ html, body {
     display: flex;
     flex-flow: row nowrap;
 }
-/* replace to tokens */
-.gap-4 {gap: 4px;}
-.gap-8 {gap: 8px;}
-.gap-16 {gap: 16px;}
-.gap-24 {gap: 24px;}
+
+.gap-4 {gap: var(--gap-xsm);}
+.gap-8 {gap: var(--gap-sm);}
+.gap-16 {gap: var(--gap-md);}
+.gap-24 {gap: var(--gap-lg);}
 
 /* stylesheet */
 
+/* Hero */
 .hero {
     min-height: 100vh;
     display: flex;
@@ -99,7 +99,6 @@ html, body {
     justify-content: center;
     align-content: center;
 }
-
 
 .hero__content {
     padding-top: 16px; 
@@ -140,7 +139,7 @@ html, body {
     color: var(--color-text-btns-primary);
     padding: 8px 16px;
     text-align: center;
-    border-radius: 4px;
+    border-radius: var(--radius-xsm);
 }
 
 .hero__btn--link {
@@ -151,9 +150,8 @@ html, body {
     padding: 0px 16px;
 }
 
-
-
-.menu {
+/* Nav */
+.hero nav {
     width: 100%;
     justify-content: space-around;
     align-content: center;
@@ -162,13 +160,13 @@ html, body {
     border-bottom: 2px solid var(--color-brand-light-blue);
 }
 
-.menu > a {
+.hero nav > a {
     text-decoration: none;
     font-weight: 600;
     color: var(--color-text-content);
 }
 
-
+/* Services */
 .services {
     background-color: var(--color-landing-elements-warm-white);
     padding: var(--spacing-lg) 0px;
@@ -176,7 +174,7 @@ html, body {
 
 .services__track {
     display: flex;
-    overflow-x: scroll;
+    overflow-x: auto;
     padding: var(--spacing-md) var(--spacing-xsm) ;
     scroll-snap-type: x mandatory;
 }
@@ -185,37 +183,60 @@ html, body {
     scroll-snap-align: center;
     flex: 0 0 90%;
     background-color: var(--color-brand-white);
-    border-radius: 24px;
+    border-radius: var(--radius-lg);
     padding: 8px 8px 16px;
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.22);
 }
 
 .service__card-info {
     background-color: var(--color-brand-light-blue);
-    border-radius: 16px;
+    border-radius: var(--radius-md);
     padding: 8px;
     box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.22);
 }
 
-.service__card-details {
-    color: var(--color-brand-white);
-}
+.service__card-details {color: var(--color-brand-white);}
 
 .service__card-feats {
     list-style-type: none;
     font-weight: var(--weight-semibold);
     color: var(--color-brand-light-blue);
-    
+    gap: var(--gap-xsm);
 }
+
 .service__card-tagline {font-weight: var(--weight-bolder);}
 .service__card-description {font-weight: var(--weight-medium);}
-
 
 .service__card-feat {
     padding: 4px 8px;
     background-color: var(--color-brand-white);
     border-radius: var(--radius-md);
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.22);
+}
+
+
+/* Trail */
+.trail__checkpoint {
+    padding: 0px 8px 8px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-md);
+}
+
+.trail__img {
+    max-width: 80%;
+    align-self: center;
+}
+
+.trail__checkpoint .trail__title {
+    color: var(--color-brand-navy-blue);
+    text-align: center;
+}
+
+.trail__checkpoint .trail__text {
+    color: var(--color-brand-navy-blue);
+    text-align: center;
+    font-size: 1.2em;
 }
 
 
