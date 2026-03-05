@@ -240,6 +240,60 @@ html, body {font-family: var(--ff-main);}
 }
 
 
+/* Social-Proof */
+.social-proof {
+   max-width: 100%;
+   overflow-x: hidden;
+}
+
+.social-proof__title {
+    max-width: 100%;
+    color: var(--color-brand-light-blue);
+    font-weight: var(--weight-black);
+    text-align: center;
+    font-size: 2em;
+}
+
+.social-proof__track {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 0 var(--spacing-md);
+}
+
+.social-proof__card {
+    flex: 0 0 85%;
+    max-width: 85%;
+    scroll-snap-align: center;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: var(--gap-md);
+    background-color: var(--color-landing-elements-warm-white);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-sm);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.22);
+}
+
+.social-proof__card .social-proof__customer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--gap-sm);
+}
+
+.social-proof__identify {
+    display: flex;
+    flex-direction: column;
+}
+
+.social-proof__name {
+    font-weight: var(--weight-bold);
+}
+
+.social-proof__role {
+    opacity: 50%;
+}
+
 @media (min-width: 1024px) {
 
     .hero__main {
