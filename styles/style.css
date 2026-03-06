@@ -19,22 +19,20 @@
     --color-opacity-50-light-blue: #00a7e180;
     --color-opacity-70-light-blue: #00a7e1b2;
     --color-opacity-70-navy-blue: #00171fb2;
-
+    
     --ff-main: Figtree, Arial, Helvetica, sans-serif;
-
+    
     --spacing-xsm: 4px;
     --spacing-sm: 8px;
     --spacing-md: 16px;
     --spacing-lg: 24px;
     --spacing-xlg: 32px;
     
-    --weight-regular: 300;
-    --weight-medium: 400;
-    --weight-semibold: 500;
-    --weight-bold: 600;
-    --weight-bolder: 700;
-    --weight-black: 900;
-
+    --font-sm: 0.875rem;
+    --font-md: 1rem;
+    --font-lg: 1.5rem;
+    --font-xl: 2rem;
+    
     /*tokens*/
     --color-btn-primary: var(--color-brand-light-blue);
     --color-text-btns-primary: var(--color-brand-white);
@@ -45,12 +43,12 @@
     --radius-sm: var(--spacing-sm);
     --radius-md: var(--spacing-md);
     --radius-lg: var(--spacing-lg);
-
+    
     --gap-xsm: var(--spacing-xsm);
     --gap-sm: var(--spacing-sm);
     --gap-md: var(--spacing-md);
     --gap-lg: var(--spacing-lg);
-
+    
 }
 
 /*op = optimization - reduce copied lines*/
@@ -107,18 +105,18 @@ html, body {font-family: var(--ff-main);}
 
 .hero__subtitle {
     color: var(--color-text-content);
-    font-weight: var(--weight-bold);
+    font-weight: 600;
 }
 
 .hero__title {
-    font-weight: var(--weight-black);
+    font-weight: 900;
     font-size: 1.8rem;
     color: var(--color-text-title);
 }
 
 .hero__description {
     color: var(--color-text-content);
-    font-weight: var(--weight-semibold);
+    font-weight: 500;
 }
 
 .hero__img {
@@ -130,8 +128,8 @@ html, body {font-family: var(--ff-main);}
     background: none;
     border: none;
     cursor: pointer;
-    font-size: 1rem;
-    font-weight: var(--weight-bold);
+    font-size: var(--font-md);
+    font-weight: 600;
 }
 
 .hero__btn--primary {
@@ -199,13 +197,13 @@ html, body {font-family: var(--ff-main);}
 
 .service__card-feats {
     list-style-type: none;
-    font-weight: var(--weight-semibold);
+    font-weight: 500;
     color: var(--color-brand-light-blue);
     gap: var(--gap-xsm);
 }
 
-.service__card-tagline {font-weight: var(--weight-bolder);}
-.service__card-description {font-weight: var(--weight-medium);}
+.service__card-tagline {font-weight: 700;}
+.service__card-description {font-weight: 400;}
 
 .service__card-feat {
     padding: 4px 8px;
@@ -242,14 +240,16 @@ html, body {font-family: var(--ff-main);}
 
 /* Social-Proof */
 .social-proof {
-   max-width: 100%;
-   overflow-x: hidden;
+    max-width: 100%;
+    overflow-x: hidden;
+    padding-bottom: 5rem;
+    border-bottom: 2px solid var(--color-brand-light-blue);
 }
 
 .social-proof__title {
     max-width: 100%;
     color: var(--color-brand-light-blue);
-    font-weight: var(--weight-black);
+    font-weight: 900;
     text-align: center;
     font-size: 2em;
 }
@@ -258,7 +258,7 @@ html, body {font-family: var(--ff-main);}
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    padding: 0 var(--spacing-md);
+    padding: 0 var(--spacing-md) var(--spacing-md);
 }
 
 .social-proof__card {
@@ -287,34 +287,81 @@ html, body {font-family: var(--ff-main);}
 }
 
 .social-proof__name {
-    font-weight: var(--weight-bold);
+    font-weight: 600;
 }
 
 .social-proof__role {
     opacity: 50%;
 }
 
-@media (min-width: 1024px) {
 
+/* Footer */
+
+.footer__page {
+    padding-top: var(--spacing-lg);
+}
+
+.tax-calculator__cta {
+    background-color: var(--color-brand-light-blue);
+    border-radius: var(--radius-sm);
+    padding: var(--spacing-lg);
+    gap: 4rem;
+}
+
+.tax-calculator__cta  a {
+    text-align: right;
+    color: var(--color-brand-white);
+    font-weight: 600;
+    font-size: 1.25rem;
+    text-shadow: 1px 2px 6px rgba(0, 0, 0, 0.302);
+}
+
+.tax__title {
+    color: var(--color-brand-white);
+    text-shadow: 1px 2px 6px rgba(0, 0, 0, 0.302);
+    font-size: var(--spacing-lg);
+}
+
+
+.footer-cta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-cta__logo{
+    max-width: 50%;
+}
+
+
+@media (min-width: 768px) {
+    .badges {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+@media (min-width: 1024px) {
+    
     .hero__main {
         display: grid;
         grid-template: repeat(2, auto) / repeat(2, 500px);
     }
-
+    
     .hero__content {
         grid-column: 1 / 2;
         grid-row: 1 / 2;
         align-self: end;
     }
-
+    
     .hero__img {
         grid-column: 2/3;
         grid-row: 1 / 3 ;
     }
-
+    
     .hero__btns {
         grid-column: 1 / 2;
         grid-row: 2 / 3;
     }
-
+    
 }
