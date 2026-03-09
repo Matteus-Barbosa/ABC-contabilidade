@@ -322,15 +322,24 @@ html, body {font-family: var(--ff-main);}
     font-size: var(--spacing-lg);
 }
 
-
 .footer-cta {
-    display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.footer-cta__logo{
-    max-width: 50%;
+.footer-cta__logo img{
+    width: 150px;
+    height: auto;
+}
+
+.footer-cta__btn {
+    background-color: var(--color-brand-light-blue);
+    border: none;
+    border-radius: var(--radius-xsm);
+    padding: .5rem 1rem;
+    color: var(--color-brand-white);
+    font-weight: 600;
+    font-size: 1rem;
 }
 
 
